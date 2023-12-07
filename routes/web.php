@@ -13,6 +13,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('home');
+
+    $data = [
+        'title' => 'Hello World',
+        'about' => 'About us',
+        'contact' => 'Contact us',
+        'blog' => 'Blog'
+    ];
+    return view('home', $data);
+});
+
+Route::get('/about-us', function () {
+
+    $home = 'Home';
+    $about = 'About us';
+    $blog = 'Blog';
+    $contact = 'Contact us';
+
+    return view('about-us', compact('home', 'about', 'blog', 'contact'));
+});
+
+Route::get('/contact', function () {
+
+    $data = [
+        'title' => 'Hello World',
+        'about' => 'About us',
+        'contact' => 'Contact us',
+        'blog' => 'Blog'
+    ];
+    return view('contact', $data);
+});
+
+Route::get('/blog', function () {
+
+    $data = [
+        'title' => 'Hello World',
+        'about' => 'About us',
+        'contact' => 'Contact us',
+        'blog' => 'Blog'
+    ];
+    return view('blog', $data);
 });
